@@ -37,3 +37,30 @@ Literal integral constants, as provided here, allow you to write the same thing 
 ```C++
 in_array_at(AnArray, 4__); //will check index during compilation.
 ``` 
+# Specification
+
+A literal constant with two trailing underscores will be read as a ```std::integral_constant```
+e.g. 
+```4__``` will be read as ```std::integral_constant<int, 4>()```
+```1234567891234__```  will be read as ```std::integral_constant<long long, 4>()```
+
+If the literal contains a decimal point it will be interpreted as floating point 
+```3.5__``` will be read as ```std::integral_constant<double, 3.5>()```
+
+Type forcing suffixes are applied after the trailing underscores
+e.g.
+```4__u``` will be read as ```std::integral_constant<unsigned int, 4>()```
+```1234567891234__u```  will be read as ```std::integral_constant<unsigned long long, 4>()```
+```4__ll``` will be read as ```std::integral_constant<long long, 4>()```
+```4__ull``` will be read as ```std::integral_constant<unsigned long long, 4>()```
+```3.5__l``` will be read as ```std::integral_constant<long double, 3.5>()```
+```3.5__f``` will be read as ```std::integral_constant<float, 3.5>()```
+
+Number base prefixes are applied at the beginning of the literal constant
+e.g. 
+```0b101__``` will be read as ```std::integral_constant<int, 5>()```
+```0xFF__``` will be read as ```std::integral_constant<int, 255>()```
+
+A free function provides a unary minus operator for ```std::integral_constant``` so that a negative prefix produces a  ```std::integral_constant``` with a negative value.
+e.g.
+```-4__``` will be read as ```std::integral_constant<int, -4>()```
