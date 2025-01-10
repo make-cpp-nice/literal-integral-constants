@@ -38,7 +38,11 @@ Literal integral constants, as provided here, allow you to write the same thing 
 in_array_at(AnArray, 4__); //will check index during compilation.
 ``` 
 # Specification
-
+To use, download literal_integral_constants.h  and add
+```C++
+#include  "literal_integral_constants.h" 
+using namespace literal_integral_constants;
+```
 A literal constant with two trailing underscores will be read as a ```std::integral_constant```
 e.g. 
 + ```4__``` will be read as ```std::integral_constant<int, 4>()```
