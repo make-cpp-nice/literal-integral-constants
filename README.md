@@ -38,7 +38,7 @@ Literal integral constants, as provided here, allow you to write the same thing 
 in_array_at(AnArray, 4__); //will check index during compilation.
 ``` 
 # Specification
-To use, download literal_integral_constants.h  and add
+To use, download [literal_integral_constants.h](https://github.com/make-cpp-nice/ptr_to_unique/discussions/1)literal_integral_constants.h  and add
 ```C++
 #include  "literal_integral_constants.h" 
 using namespace literal_integral_constants;
