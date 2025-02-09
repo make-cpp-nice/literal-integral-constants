@@ -68,3 +68,5 @@ e.g.
 A free function provides a unary minus operator for ```std::integral_constant``` so that a negative prefix produces a  ```std::integral_constant``` with a negative value.
 e.g.
 + ```-4__``` will be read as ```std::integral_constant<int, -4>()```
+
+Please post any feedback or comments on [Comment and discussion](https://github.com/make-cpp-nice/literal-integral-constants/discussions/1)
